@@ -104,7 +104,7 @@ root.withdraw()
 
 input_file = filedialog.askopenfilename(
     title="Select FortiGate Configuration File",
-    initialdir=r"C:\Users\IvoDurovich\Downloads",
+    initialdir=r"C:\Users\Acme\Downloads",
     filetypes=[("Text files", "*.txt"), ("All files", "*.*")]
 )
 
