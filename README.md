@@ -5,7 +5,12 @@
 ## FortiGate Policy TXT to CSV Parser
 
 This script parses FortiGate firewall policy configuration text from a `.txt` file and exports the extracted policy values to a CSV file.
-When run, the script will 
+When run, the script will:
+1) Opens a file picker so you can choose a FortiGate configuration .txt file
+2) Reads the firewall policy section from that file
+3) Extracts each policy and selected set values
+4) Formats some fields so they display nicely in Excel
+5) Saves the results to a CSV file
 
 ## Overview
 
