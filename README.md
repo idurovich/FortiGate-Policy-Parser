@@ -5,6 +5,7 @@
 ## FortiGate Policy TXT to CSV Parser
 
 This script parses FortiGate firewall policy configuration text from a `.txt` file and exports the extracted policy values to a CSV file.
+When run, the script will 
 
 ## Overview
 
@@ -78,31 +79,6 @@ Typical values that may be captured include:
 - Services
 - Log traffic setting
 
-## Notes
-
-- The input file must be properly formatted for the parser to work correctly.
-- Multi-value fields such as `srcaddr`, `dstaddr`, and `service` should remain on a single line if the script expects line-based parsing.
-- Parsing begins only at `config firewall policy`.
-- Parsing stops at the first `end`.
-
-## Example Use Case
-
-Use this script when you need to:
-
-- Convert FortiGate firewall policies into CSV format
-- Review policies in spreadsheet software
-- Perform reporting or auditing on exported policy data
-- Simplify analysis of FortiGate policy configurations
-
-## Limitations
-
-Depending on the implementation, the script may assume:
-
-- One complete firewall policy section per file
-- Standard FortiGate CLI formatting
-- No malformed or incomplete policy blocks
-- Values are structured using `set <field> <value>`
-
 ## Suggested File Structure
 
 ```text
@@ -111,21 +87,6 @@ project/
 ├── policies.txt
 └── output.csv
 ```
-
-## Running the Script
-
-Example:
-
-```bash
-python parser.py
-```
-
-If your script accepts file arguments, you may use something like:
-
-```bash
-python parser.py policies.txt output.csv
-```
-
 ## Summary
 
 This script provides a simple way to extract FortiGate firewall policy entries from a text configuration file and convert them into a CSV format for easier review and analysis.
