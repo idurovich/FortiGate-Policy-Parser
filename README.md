@@ -12,6 +12,8 @@ When run, the script will:
 4) Formats some fields so they display nicely in Excel
 5) Saves the results to a CSV file
 
+It is specifically designed for FortiGate CLI configuration text, especially the config firewall policy section.
+
 ## Overview
 
 The script is designed to:
