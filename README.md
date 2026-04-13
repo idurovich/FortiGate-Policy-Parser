@@ -6,30 +6,17 @@
 
 This script parses FortiGate firewall policy configuration text from a `.txt` file and exports the extracted policy values to a CSV file.
 When run, the script will:
-1) Opens a file picker so you can choose a FortiGate configuration .txt file
-2) Reads the firewall policy section from that file
-3) Extracts each policy and selected set values
-4) Formats some fields so they display nicely in Excel
+1) Open a file picker so you can choose a FortiGate configuration .txt file
+2) Read the firewall policy section from that file
+3) Extract each policy and selected set values
+4) Format some fields so they display nicely in Excel
 5) Saves the results to a CSV file
 
 It is specifically designed for FortiGate CLI configuration text, especially the config firewall policy section.
 
-## Overview
-
-The script is designed to:
-
-- Read a FortiGate policy configuration saved as a plain text file
-- Start parsing at `config firewall policy`
-- Stop parsing at `end`
-- Process each firewall policy block beginning with `edit`
-- Finish each policy block at `next`
-- Extract relevant `set` values
-- Export the parsed results into a CSV file
-
 ## Input Requirements
 
 Before running the script, ensure the FortiGate policy file:
-
 - Is saved as a `.txt` file
 - Contains firewall policy configuration in FortiGate CLI format
 - Includes the section:
@@ -40,7 +27,6 @@ Before running the script, ensure the FortiGate policy file:
 ## Expected Format
 
 The script expects input similar to the following:
-
 ```text
 config firewall policy
     edit 123
@@ -60,7 +46,6 @@ end
 ## How It Works
 
 The script processes the configuration using the following logic:
-
 1. Locate the line `config firewall policy`
 2. Begin reading policy entries
 3. Detect each policy block starting with `edit`
@@ -74,7 +59,6 @@ The script processes the configuration using the following logic:
 The script exports the parsed firewall policy data into a CSV file.
 
 Typical values that may be captured include:
-
 - Policy ID
 - UUID
 - Source interface
@@ -86,14 +70,3 @@ Typical values that may be captured include:
 - Services
 - Log traffic setting
 
-## Suggested File Structure
-
-```text
-project/
-├── parser.py
-├── policies.txt
-└── output.csv
-```
-## Summary
-
-This script provides a simple way to extract FortiGate firewall policy entries from a text configuration file and convert them into a CSV format for easier review and analysis.
